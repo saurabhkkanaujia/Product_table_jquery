@@ -14,6 +14,7 @@ $(document).ready(function(){
                 products.push(product);
                 display(products);
                 $('.success').css('display', 'block');
+                $('#message').html('Added');
                 $('.error').css('display', 'none');
             }
         }
@@ -42,6 +43,9 @@ $(document).ready(function(){
         prod = getProduct(p_id);
         products.splice(products.indexOf(prod),1);
         display(products);
+        $('.success').css('display', 'block');
+        $('#message').html('deleted');
+
     });
 
     $('#update').click(function(){
