@@ -61,6 +61,12 @@ $(document).ready(function(){
         display(products);
     });
 
+    $('.close').click(function(){
+        $('.success').css('display', 'none');
+        $('.error').css('display', 'none');
+    });
+    
+
 });
 
 function getProduct(p_sku){
