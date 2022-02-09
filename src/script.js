@@ -113,7 +113,7 @@ function idValidate(p_sku, products){
 }
 
 function checkValues(p_sku, p_name, p_price, p_qty){
-    if (p_sku == ""){
+    if (p_sku == "" || isNaN(p_sku)){
         $('#product_sku').css('border', 'red 3px solid');
         return false;
     }
