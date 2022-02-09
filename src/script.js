@@ -7,15 +7,26 @@ $(document).ready(function(){
         var p_name = $('#product_name').val();
         var p_price = $('#product_price').val();
         var p_qty = $('#product_quantity').val();
+        if (checkValues(p_sku, p_name, p_price, p_qty) && idValidate(p_sku, products)){
+            var product = getArray(p_sku, p_name, p_price, p_qty);
 
-        var product = getArray(p_sku, p_name, p_price, p_qty);
-
-        if (flag == -1){
-            products.push(product);
-            display(products);
+            if (flag == -1){
+                products.push(product);
+                display(products);
+                $('.success').css('display', 'block');
+                $('.error').css('display', 'none');
+            }
         }
+        else{
+            $('.error').css('display', 'block');
+            $('.success').css('display', 'none');
+        }
+           
     });
     $('body').on("click", "#edit_form", function(){
+        $('#update').css('display', 'inline');
+        $('#add_product').css('display', 'none');
+        
         var p_id = $(this).data("id");
         prod = getProduct(p_id);
 
@@ -77,6 +88,7 @@ function display(products){
     }
     // document.getElementById('table').innerHTML = html;
     $('#table').html(html);
+
 }
 
 

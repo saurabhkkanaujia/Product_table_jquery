@@ -46,11 +46,13 @@ body{
 #notification .success{
 	border: 1px solid green;
 	background: #7ED47E;
+	display: none;
 }
 
 #notification .error{
 	border: 1px solid red;
 	background: #FF5733;
+	display: none;
 }
 
 #product_list .delete{
@@ -63,4 +65,8 @@ body{
 
 #product_list table th{
 	text-align: left;
+}
+
+#update{
+	display: none;
 }
