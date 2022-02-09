@@ -113,7 +113,20 @@ function idValidate(p_sku, products){
 }
 
 function checkValues(p_sku, p_name, p_price, p_qty){
-    if (p_sku == "" || p_name == "" || p_price == "" || p_qty == "" || isNaN(p_price) || isNaN(p_qty)){
+    if (p_sku == ""){
+        $('#product_sku').css('border', 'red 3px solid');
+        return false;
+    }
+    else if(p_name == "" ){
+        $('#product_name').css('border', 'red 3px solid');
+        return false;
+    }
+    else if(p_price == "" || isNaN(p_price)){
+        $('#product_price').css('border', 'red 3px solid');
+        return false;
+    }
+    else if(p_qty == "" || isNaN(p_qty)){
+        $('#product_quantity').css('border', 'red 3px solid');
         return false;
     }
     else{
