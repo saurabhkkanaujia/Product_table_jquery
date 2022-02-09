@@ -25,6 +25,13 @@ $(document).ready(function(){
         $('#product_quantity').val(prod.qty);
     });
 
+    $('body').on("click", "#delete", function(){
+        var p_id = $(this).data("id");
+        prod = getProduct(p_id);
+        products.splice(products.indexOf(prod),1);
+        display(products);
+    });
+
     $('#update').click(function(){
         var update_sku = $('#product_sku').val();
         var update_name = $('#product_name').val();
@@ -65,7 +72,7 @@ function display(products){
         <td>'+products[i].name+'</td>\
         <td>'+products[i].price+'</td>\
         <td>'+products[i].qty+'</td>\
-        <td><a href ="#" id="edit_form" data-id='+ products[i].sku +'>Edit</a>/</td>\
+        <td><a href ="#" id="edit_form" data-id='+ products[i].sku +'>Edit</a>/<a href ="#" id="delete" data-id='+ products[i].sku +'>Delete</a></td>\
     </tr>'
     }
     // document.getElementById('table').innerHTML = html;
