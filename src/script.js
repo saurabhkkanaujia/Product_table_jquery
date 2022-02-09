@@ -38,6 +38,7 @@ $(document).ready(function(){
 
     $('body').on("click", "#delete", function(){
         var p_id = $(this).data("id");
+        alert("Are you sure you want to delete this row with SKU = "+p_id);
         prod = getProduct(p_id);
         products.splice(products.indexOf(prod),1);
         display(products);
